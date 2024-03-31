@@ -1,0 +1,51 @@
+baseURL: https://lct.cx/
+languageCode: en-us
+title: Lucas' Site
+ 
+theme: ["PaperMod"]
+
+params:
+  defaultTheme: dark
+  profileMode:
+    enabled: true
+    title: "Lucas Trevizan" # optional default will be site title
+    subtitle: "Dev/IT"
+    imageUrl: "profile.jpeg" # optional
+    imageTitle: "Profile Picture" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
+    buttons:
+      - name: Posts
+        url: "/posts"
+      - name: Projects
+        url: "/projects"
+      - name: Search
+        url: "/search"
+
+  socialIcons: # optional
+    - name: "LinkedIn"
+      url: "https://www.linkedin.com/in/lctrev/"
+    - name: "Github"
+      url: "https://github.com/lctrevizan"
+  
+menu:
+  main:
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+enableEmoji: true
