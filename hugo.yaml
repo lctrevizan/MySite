@@ -10,7 +10,7 @@ params:
     enabled: true
     title: "Lucas Trevizan" # optional default will be site title
     subtitle: "Dev/IT"
-    imageUrl: "profile.jpeg" # optional
+    imageUrl: "profile.webp" # optional
     imageTitle: "Profile Picture" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size

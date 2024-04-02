@@ -4,19 +4,15 @@
   <url>
     <loc>http://localhost:1313/posts/start/</loc>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/blog/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/blog/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/code/</loc>
   </url><url>
     <loc>http://localhost:1313/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/meta/</loc>
-  </url><url>
-    <loc>http://localhost:1313/categories/meta/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
   </url><url>
