@@ -10,6 +10,12 @@ ShowToc: false
 TocOpen: false
 ---
 
+Click on the title to go to github
+## [This site](https://github.com/lctrevizan/MySite)
+
+This website was created by me using the Hugo static site generator and the PaperMod theme for Hugo. 
+
+It has posts, search, tags and categories as well as links to my socials. 
 
 ## [Debscripts](https://github.com/lctrevizan/debscripts)
 
