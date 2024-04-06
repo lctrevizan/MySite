@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | Lucas&#39; Site</title>
-<meta name="keywords" content="">
-<meta name="description" content="Posts - Lucas&#39; Site">
-<meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<title>The XZ backdoor | Lucas&#39; Site</title>
+<meta name="keywords" content="linux, malware">
+<meta name="description" content="A wild backdoor appears.">
+<meta name="author" content="Lucas Trevizan">
+<link rel="canonical" href="http://localhost:1313/posts/xzbackdoor/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/xzbackdoor/">
 <noscript>
     <style>
         #theme-toggle,
@@ -31,7 +30,7 @@
 </noscript>
 </head>
 
-<body class="list dark" id="top">
+<body class=" dark" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "light") {
         document.body.classList.remove('dark')
@@ -85,35 +84,42 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">The XZ backdoor
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Mantainer Jia Tan tried but failed to compromise millions of computers</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-04-05 00:00:00 +0000 UTC'>April 5, 2024</span>&nbsp;·&nbsp;Lucas Trevizan</footer>
-  <a class="entry-link" aria-label="post link to The XZ backdoor" href="http://localhost:1313/posts/xzbackdoor/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      The XZ backdoor
+    </h1>
+    <div class="post-description">
+      A wild backdoor appears.
+    </div>
+    <div class="post-meta"><span title='2024-04-05 00:00:00 +0000 UTC'>April 5, 2024</span>&nbsp;·&nbsp;Lucas Trevizan
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">A Beginning
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>A post to start everything, because everything needs a start.</p>
+</div>
+  </header> 
+  <div class="post-content"><p>On March 29th, a Microsoft developer using Debian Unstable noticed that their SSH login was taking significantly longer (about 500 milliseconds more than usual) while benchmarking PostgreSQL. This prompted the developer to investigate the cause. After checking multiple potential culprits, the developer narrowed down the issue to the libzma library, which led them to examine the XZ Utils for any bugs.</p>
+<p>The investigation revealed that the code had been injected into the tarball, within a binary &ldquo;test file&rdquo;, by Jia Tan, the current maintainer of XZ Utils (JiaT75 on GitHub). The backdoor was capable of remote code execution (RCE) and only required an open SSH port, which most servers have, to carry out the attack.</p>
+<p>It is suspected that Jia Tan is not a real person and is likely a fake profile used by a hacking group. The group had spent nearly 4 years gaining the trust of the open-source community and attempting to become the maintainer of an important package in order to execute this attack.</p>
+<p>Fortunately, the backdoor was discovered early and only affected the following distributions:</p>
+<ul>
+<li>Fedora Beta and Rawhide</li>
+<li>OpenSUSE Tumbleweed</li>
+<li>Debian Unstable (Sid)</li>
+</ul>
+<p>Other distributions, such as Fedora Stable, Ubuntu, Debian Stable, and OpenSUSE Leap, did not receive the compromised package and were not affected by the backdoor.</p>
+<p>Some distributions, like Gentoo and Arch, had received the backdoored package but were not vulnerable due to not directly linking OpenSSH to liblzma (in Arch&rsquo;s case) and not having an OpenSSH version patched to work with systemd-notify support (in Gentoo&rsquo;s case).</p>
+
+
   </div>
-  <footer class="entry-footer">Lucas Trevizan</footer>
-  <a class="entry-link" aria-label="post link to A Beginning" href="http://localhost:1313/posts/start/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/linux/">Linux</a></li>
+      <li><a href="http://localhost:1313/tags/malware/">Malware</a></li>
+    </ul>
+  </footer>
 </article>
     </main>
     
